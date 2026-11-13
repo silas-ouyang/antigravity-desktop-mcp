@@ -1,0 +1,34 @@
+{
+  "name": "antigravity-desktop-mcp",
+  "version": "1.0.0",
+  "description": "Windows Desktop Automation stdio MCP Server for Google Antigravity, adapted from LJL454/dsh-computer-use with a physical always-on-top E-Stop HUD, global abort hotkey, window whitelist guard, and low-idle-CPU architecture.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "antigravity-desktop-mcp": "./bin/antigravity-desktop-mcp.js"
+  },
+  "main": "./src/server.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build:native": "node scripts/build-native.mjs",
+    "build:worker": "node scripts/build-worker.mjs",
+    "build": "node scripts/build-worker.mjs && node scripts/build-native.mjs",
+    "check:worker": "node scripts/build-worker.mjs --check",
+    "doctor": "node scripts/doctor.mjs",
+    "test:unit": "node --test tests/unit-*.test.mjs",
+    "test:live": "node --test tests/live-*.test.mjs",
+    "test": "node --test tests/unit-*.test.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "antigravity",
+    "windows",
+    "desktop-automation",
+    "ui-automation",
+    "computer-use",
+    "estop"
+  ]
+}
